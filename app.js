@@ -8,5 +8,10 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/places', placeRoutes);
 app.use('/api/favorites', favoriteRoutes);
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`서버 실행 중: http://localhost:${PORT}`);
+});
 
 module.exports = app;
