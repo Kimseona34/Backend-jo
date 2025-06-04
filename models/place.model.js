@@ -1,18 +1,17 @@
 const mongoose = require('mongoose');
 
 const placeSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  place_type: String,
+  name: {
+    type: String,
+    required: true
+  },
   description: String,
   category: String,
-  themes: [String],
   address: String,
-  region: String,
-  latitude: Number,
-  longitude: Number,
-  image_url: String,
-  open_hours: String,
-  fee_info: String
+  coordinates: {
+    latitude: { type: Number, required: true },
+    longitude: { type: Number, required: true }
+  }
 });
 
 module.exports = mongoose.model('Place', placeSchema);
