@@ -9,7 +9,7 @@ const commonParams = {
   _type: 'json'
 };
 
-// 1. 현재 위치 기준 주변 경로 리스트
+// 현재 위치 기준 주변 경로 리스트
 exports.getNearbyCourses = async (req, res) => {
   const { mapX, mapY } = req.query;  // 위도, 경도
   try {
@@ -27,7 +27,7 @@ exports.getNearbyCourses = async (req, res) => {
   }
 };
 
-// 2. 특정 코스 ID로 상세 경로 조회
+// 특정 코스 ID로 상세 경로 조회
 exports.getCourseDetail = async (req, res) => {
   const { contentId } = req.params;
   try {
